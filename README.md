@@ -11,19 +11,15 @@ docker-compose up -d
 ```
 Esto construirá las imágenes de los contenedores correspondientes al sistema de login y block de la API y también las ejecutará junto a las imágenes relacionadas al servidor de Apache Kafka.
 
-Sin embargo, debido a la imposibilidad de conectar los contenedores entre sí, los servicios de login y block ofrecidos por la aplicación son levantados sin Docker. De esta manera, en el caso del login se debe ejecutar el siguiente comando desde una nueva consola (establecida en el mismo directorio de antes):
+Sin embargo, debido a que el Docker del sistema de bloqueo se ejecuta antes que el contenedor del Broker, el servicio de block ofrecido por la aplicación es levantado de forma manual. De esta manera, para realizar lo dicho se debe abrir una nueva consola establecida en el directorio api-kafka. Luego, se ejecuta el siguiente comando:
 ```bash
-python ./api-login/app.py
+docker exec -it api-kafka_api-security_1 python /app/app.py
 ```
-Y, desde otra consola establecida en el mismo directorio que antes, se realiza de forma similar para el sistema de bloqueo:
-```bash
-python ./api-security/app.py
-```
-Con ello ya se tiene la aplicación ejecutándose. Lo único que falta es crear un tópico en el servidor de Apache Kafka. Para esto, desde una nueva consola establecida en el directorio api-kafka se ingresa el siguiente comando:
+Con ello, ya está la aplicación ejecutándose. Lo único que falta es crear un tópico en el servidor de Apache Kafka. Para esto, desde una nueva consola establecida en el directorio api-kafka se ingresa el siguiente comando:
 ```bash
 docker exec -it api-kafka_kafka_1 /opt/bitnami/kafka/bin/kafka-topics.sh --bootstrap-server localhost:9092 --create --topic mytopic
 ```
-De esta manera, la aplicación se encuentra lista para utilizar. Cabe destacar que debido a que solo se utiliza Docker para el servidor de Apache Kafka, los demás servicios empleados pueden tener un comportamiento distinto al ejecutarse en otras máquinas. 
+Así, la aplicación se encuentra lista para utilizar. Cabe destacar que debido a que solo se utiliza Docker para el servidor de Apache Kafka, los demás servicios empleados pueden tener un comportamiento distinto al ejecutarse en otras máquinas. 
 
 # Método de uso de los servicios
 

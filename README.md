@@ -19,7 +19,7 @@ Con ello, ya está la aplicación ejecutándose. Lo único que falta es crear un
 ```bash
 docker exec -it api-kafka_kafka_1 /opt/bitnami/kafka/bin/kafka-topics.sh --bootstrap-server localhost:9092 --create --topic mytopic
 ```
-Así, la aplicación se encuentra lista para utilizar. Cabe destacar que debido a que solo se utiliza Docker para el servidor de Apache Kafka, los demás servicios empleados pueden tener un comportamiento distinto al ejecutarse en otras máquinas. 
+Así, la aplicación se encuentra lista para utilizar.
 
 # Método de uso de los servicios
 

@@ -26,8 +26,11 @@ Así, la aplicación se encuentra lista para utilizar. Cabe destacar que debido 
 Para utilizar el servicio de login de la aplicación, se debe hacer un request del tipo POST al siguiente link: localhost:3000/login. Además, los datos a enviar deben estar en formato JSON con la siguiente estructura:
 
 {
+
 	"user": "usuario",
+	
 	"pass": "contraseña"
+	
 }
 
 Donde en "usuario" y en "contraseña" se ha de reemplazar con los información correspondiente. La respuesta a esto será la misma entrada.

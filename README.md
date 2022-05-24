@@ -11,7 +11,7 @@ docker-compose up -d
 ```
 Esto construirá las imágenes de los contenedores correspondientes al sistema de login y block de la API y también las ejecutará junto a las imágenes relacionadas al servidor de Apache Kafka.
 
-Con ello, ya está la aplicación ejecutándose. Lo único que falta es crear un tópico en el servidor de Apache Kafka. Para esto, desde una nueva consola establecida en el directorio api-kafka se ingresa el siguiente comando:
+Con ello, ya está la aplicación ejecutándose. Ahora se debe crear un tópico en el servidor de Apache Kafka. Para esto, desde una nueva consola establecida en el directorio api-kafka se ingresa el siguiente comando:
 ```bash
 docker exec -it api-kafka_kafka_1 /opt/bitnami/kafka/bin/kafka-topics.sh --bootstrap-server localhost:9092 --create --topic mytopic
 ```

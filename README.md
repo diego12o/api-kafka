@@ -30,7 +30,7 @@ Para utilizar el servicio de login de la aplicación, se debe hacer un request d
 	"pass": "contraseña"
 }
 ```
-Donde en "usuario" y en "contraseña" se ha de reemplazar con los información correspondiente. La respuesta a esto será la misma entrada.
+Donde en "usuario" y en "contraseña" se ha de reemplazar con la información correspondiente. La respuesta a esto será la misma entrada válida dispuesta en el request POST.
 
 Para el caso del sistema de bloqueo, se debe realizar una petición GET al link localhost:5000/blocked. La respuesta a esto será una variable con la lista de usuarios bloqueados.
 

@@ -24,10 +24,12 @@ Así, la aplicación se encuentra lista para utilizar. Cabe destacar que debido 
 # Método de uso de los servicios
 
 Para utilizar el servicio de login de la aplicación, se debe hacer un request del tipo POST al siguiente link: localhost:3000/login. Además, los datos a enviar deben estar en formato JSON con la siguiente estructura:
+
 {
 	"user": "usuario",
 	"pass": "contraseña"
 }
+
 Donde en "usuario" y en "contraseña" se ha de reemplazar con los información correspondiente. La respuesta a esto será la misma entrada.
 
 Para el caso del sistema de bloqueo, se debe realizar una petición GET al link localhost:5000/blocked. La respuesta a esto será una variable con la lista de usuarios bloqueados.
